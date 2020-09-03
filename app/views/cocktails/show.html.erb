@@ -1,0 +1,28 @@
+<div class="container">
+  <h1><%= @cocktail.name %></h1>
+  <%= link_to "Back to list", root_path %>
+</div>
+
+<div>
+
+  <h1>Recipe</h1>
+    
+  <p>
+    <strong>Name:</strong>
+    <%= @cocktail.name %>
+  </p>
+
+  <p>
+    <strong>Doses</strong>
+    <%= @cocktail.doses %>
+
+    <% @cocktail.doses.each do |dose| %>
+    <%= dose.ingredient.name %>
+  </p>
+
+  <%#= array of doses, iterate them , dose.ingredient.name %>
+  <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?"} do %>
+</div>
+
+
+  
